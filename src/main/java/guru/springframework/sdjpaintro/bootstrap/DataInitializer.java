@@ -21,13 +21,13 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         bookRepository.deleteAll();
 
-        Book bookDDD = new Book("Domain Driven Design", "123", "RandomHouse");
+        Book bookDDD = new Book("Domain Driven Design", "123", "RandomHouse", null);
 
         System.out.println("ID before: " + bookDDD.getId());
         Book savedDDD = bookRepository.save(bookDDD);
         System.out.println("ID after: " + savedDDD.getId());
 
-        Book bookSIA = new Book("Spring in Action", "456", "Orielly");
+        Book bookSIA = new Book("Spring in Action", "456", "Orielly", null);
         Book savedSIA = bookRepository.save(bookSIA);
 
         bookRepository.findAll().forEach(book -> {
